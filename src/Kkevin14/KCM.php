@@ -79,6 +79,10 @@ class KCM extends PluginBase implements Listener{
            $player->sendMessage('§l§c금액은 0보다 커야합니다!');
            return true;
          }
+         if($val[1] < EconomyAPI::getInstance()->getMoney($player)){
+           $player->sendMessage('§l§c돈이 부족합니다!!');
+           return true;
+         }
          if(!is_numeric($val[1])){
            $player->sendMessage('§l§c금액은 숫자여야 합니다!');
            return true;
